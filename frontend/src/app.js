@@ -1,11 +1,11 @@
 document.addEventListener('click', coordinates => {
-    const button = document.createElement('button');
+    const idea = document.createElement('p');
 
-    button.style.position = "absolute";
-    button.style.marginTop = `${coordinates.clientY}px`;
-    button.style.marginLeft = `${coordinates.clientX}px`;
+    idea.style.position = "absolute";
+    idea.style.marginTop = `${coordinates.clientY}px`;
+    idea.style.marginLeft = `${coordinates.clientX}px`;
 
-    button.innerText = prompt("What is the idea ?");
-    document.body.appendChild(button);
+    idea.innerText = prompt("What is the idea ?");
+    document.body.appendChild(idea);
 });
 
