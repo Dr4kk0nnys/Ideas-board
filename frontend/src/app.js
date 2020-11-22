@@ -9,3 +9,12 @@ document.addEventListener('click', coordinates => {
     document.body.appendChild(idea);
 });
 
+function postData(data) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:3000/idea/", true);
+    xhr.send("Test");
+}
+
+postData();
+
+// function getApiDataOnLoad
