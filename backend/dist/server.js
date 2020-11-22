@@ -9,7 +9,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const idea_1 = __importDefault(require("./routes/idea"));
 // Configs.
-// app.use(express.json());
+app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 // app.use(express.urlencoded())
 app.use('/idea', idea_1.default);

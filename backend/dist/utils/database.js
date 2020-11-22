@@ -11,5 +11,8 @@ class Database {
     read() {
         return fs_1.default.readFileSync(this.databaseFileName, "utf-8");
     }
+    write(data) {
+        return fs_1.default.writeFileSync(this.databaseFileName, data);
+    }
 }
 exports.default = Database;

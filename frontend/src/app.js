@@ -14,9 +14,7 @@ document.addEventListener('click', coordinates => {
 function postData(coordinates, text) {
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "http://localhost:8000/idea/", true);
-    xhr.send({"coordinates": coordinates, text});
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.send(JSON.stringify({"coordinates": text}));
+    console.log(xhr.responseText);
 }
-
-// postData();
-
-// function getApiDataOnLoad
