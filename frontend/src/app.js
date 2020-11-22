@@ -7,14 +7,16 @@ document.addEventListener('click', coordinates => {
 
     idea.innerText = prompt("What is the idea ?");
     document.body.appendChild(idea);
+
+    postData(coordinates, idea.innerText);
 });
 
-function postData(data) {
+function postData(coordinates, text) {
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:3000/idea/", true);
-    xhr.send("Test");
+    xhr.open("POST", "http://localhost:8000/idea/", true);
+    xhr.send({"coordinates": coordinates, text});
 }
 
-postData();
+// postData();
 
 // function getApiDataOnLoad

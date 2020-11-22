@@ -7,6 +7,11 @@ dotenv.config();
 import idea from './routes/idea';
 
 
+// Configs.
+// app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded())
+
 app.use('/idea', idea);
 
 // Port is usually 8000
