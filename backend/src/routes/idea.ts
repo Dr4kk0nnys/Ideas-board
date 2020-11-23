@@ -8,8 +8,9 @@ import fs from 'fs';
 
 
 router.post('/', (req, res) => {
-    const { coordinates } = req.body;
-    fs.writeFileSync("database.txt", coordinates);
+    const { coordinates, text } = req.body;
+    console.log(coordinates, text);
+
     res.send(req.body);
 });
 

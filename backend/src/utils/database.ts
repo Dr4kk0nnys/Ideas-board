@@ -12,8 +12,8 @@ class Database {
         return fs.readFileSync(this.databaseFileName, "utf-8");
     }
 
-    write(data: string) {
-        return fs.writeFileSync(this.databaseFileName, data);
+    append(data: string) {
+        return fs.appendFileSync(this.databaseFileName, data);
     }
 }
 

@@ -8,13 +8,13 @@ document.addEventListener('click', coordinates => {
     idea.innerText = prompt("What is the idea ?");
     document.body.appendChild(idea);
 
-    postData(coordinates, idea.innerText);
+    postData({"x": coordinates.clientX, "y": coordinates.clientY}, idea.innerText);
 });
 
 function postData(coordinates, text) {
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "http://localhost:8000/idea/", true);
     xhr.setRequestHeader("Content-type", "application/json");
-    xhr.send(JSON.stringify({"coordinates": text}));
+    xhr.send(JSON.stringify({"coordinates": coordinates, text}));
     console.log(xhr.responseText);
 }

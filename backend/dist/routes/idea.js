@@ -9,8 +9,8 @@ const database_1 = __importDefault(require("../utils/database"));
 const database = new database_1.default(process.env.DATABASE_NAME);
 const fs_1 = __importDefault(require("fs"));
 router.post('/', (req, res) => {
-    const { coordinates } = req.body;
-    fs_1.default.writeFileSync("database.txt", coordinates);
+    const { coordinates, text } = req.body;
+    fs_1.default.writeFileSync("database.txt", String(coordinates.x));
     res.send(req.body);
 });
 exports.default = router;
