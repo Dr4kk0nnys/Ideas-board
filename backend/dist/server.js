@@ -7,11 +7,12 @@ const express_1 = __importDefault(require("express"));
 const app = express_1.default();
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
+const cors_1 = __importDefault(require("cors"));
 const idea_1 = __importDefault(require("./routes/idea"));
 // Configs.
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
-// app.use(express.urlencoded())
+app.use(cors_1.default());
 app.use('/idea', idea_1.default);
 // Port is usually 8000
 app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));

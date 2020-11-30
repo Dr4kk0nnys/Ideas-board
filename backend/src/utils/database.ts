@@ -13,7 +13,7 @@ class Database {
     }
 
     append(data: string) {
-        return fs.appendFileSync(this.databaseFileName, data);
+        return fs.appendFileSync(this.databaseFileName, data + '\n');
     }
 }
 
